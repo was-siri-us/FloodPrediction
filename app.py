@@ -20,16 +20,16 @@ def returnPred():
         
         if(q[-1]=='1'):
             d['a']=1
-            model = joblib.load('lib\\model\\modelRF.joblib')
+            model = joblib.load('./modelRF.joblib')
         if(q[-1]=='2'):
             d['a']=2
-            model = joblib.load('lib\\model\\modelgBoost.joblib')
+            model = joblib.load('./modelgBoost.joblib')
         if(q[-1]=='3'):
             d['a']=3
-            model = joblib.load('lib\\model\\modelLogistic.joblib')
+            model = joblib.load('./modelLogistic.joblib')
         if(q[-1]=='4'):
             d['a']=4
-            model = joblib.load('lib\\model\\modelSVM.joblib')
+            model = joblib.load('./modelSVM.joblib')
         
         out = str(model.predict(answer)[0])
         if(out=="1" or out=="YES" ):
@@ -45,7 +45,7 @@ def returnPred():
         else:
             flag = 0
             
-        df = pd.read_csv('lib\\model\\kerala.csv')
+        df = pd.read_csv('./kerala.csv')
         for i in range(2,14):
             d[df.columns[i]] =   df.iloc[int(input)-1901,i] if(flag) else 0
         d['flood'] = df.iloc[int(input)-1901,15] if(flag) else 0
