@@ -14,7 +14,7 @@ def returnPred():
     if(q[0]=="0"):
         input  = q[:-2]
         answer = [[float(i) for i in input.split(',')]]
-        model = joblib.load('lib\\model\\modelLogistic.joblib')
+        model = joblib.load('./modelLogistic.joblib')
     
         
         
